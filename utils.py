@@ -1,4 +1,5 @@
-from scipy import integrate
+from scipy.integrate import quad
+import math
 
 def fact(n):
 	"""Computes the factorial of a natural number.
@@ -40,7 +41,14 @@ def integrate(function, lower, upper):
 		you'll probably need the 'eval' function to evaluate the function
 		to integrate given as a string.
 	"""
+	# def integrand(x,a,b):
+	# 	return a*x**2-b
+	def integrand(x):
+		return eval(function)
+	res, error = quad(integrand,lower,upper) #fonction, lower, upper,
+	return res
 	pass
+
 
 if __name__ == '__main__':
 	print(fact(5))

@@ -2,13 +2,13 @@ import pytest
 import utils
 
 def test_fact():
-    number = 2
+    assert main.fact (3) == 6
     pass
 
 def test_roots():
-    equ = x^2 + 2x + 1
+    assert main.roots (1, 0, 1) ==
     pass
 
 def test_integrate():
-    function = 'x ** 2 - 1', -1, 1
+    assert main.integrate('x ** 2 - 1', -1, 1) == 
     pass

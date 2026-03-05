@@ -1,3 +1,5 @@
+from scipy import integrate
+
 def fact(n):
 	"""Computes the factorial of a natural number.
 	
@@ -5,6 +7,10 @@ def fact(n):
 	Post: Returns the factorial of 'n'.
 	Throws: ValueError if n < 0
 	"""
+	res = 1
+	for a in range(1,n+1):
+		res = res*a
+	return res
 	pass
 
 def roots(a, b, c):
@@ -14,6 +20,11 @@ def roots(a, b, c):
 	Post: Returns a tuple with zero, one or two elements corresponding
 		to the roots of the ax^2 + bx + c polynomial.
 	"""
+	delta = b**2 - 4*a*c
+	res1 = (-b+(delta**(1/2)))/2*a
+	res2 = (-b-(delta**(1/2)))/2*a
+	res =(res1,res2)
+	return res
 	pass
 
 def integrate(function, lower, upper):
